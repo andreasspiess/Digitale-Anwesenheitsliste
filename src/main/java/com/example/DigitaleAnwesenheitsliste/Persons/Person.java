@@ -1,23 +1,25 @@
 package com.example.DigitaleAnwesenheitsliste.Persons;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-public class Person {
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+
+public abstract class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column
     private String firstName;
 
+    @Column
     private String lastName;
 
     @Column(unique = true)
     private String email;
 
+    @Column
     private String password;
 
 }
