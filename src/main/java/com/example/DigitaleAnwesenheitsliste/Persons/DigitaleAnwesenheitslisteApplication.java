@@ -1,4 +1,4 @@
-package com.example.DigitaleAnwesenheitsliste;
+package com.example.DigitaleAnwesenheitsliste.Persons;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
