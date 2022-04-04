@@ -1,5 +1,7 @@
 package com.example.DigitaleAnwesenheitsliste.Persons;
 
+import org.springframework.security.core.authority.mapping.Attributes2GrantedAuthoritiesMapper;
+
 import javax.persistence.*;
 
 @Entity
