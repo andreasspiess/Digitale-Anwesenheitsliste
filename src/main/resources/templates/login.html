@@ -9,6 +9,7 @@
 
     body {
     background-color: #002a5c;
+
     }
 
     .headline {
@@ -26,21 +27,19 @@
 
     .mb-3 {
     justify-content: center;
+    margin-top: 1rem;
     }
 
-    .fas fa-user-alt {
-    margin-top: 40px;
-    }
 
     </style>
 
 </head>
 <body>
 
-    <center><img class="mischok-logo" th:src="@{images/mischoklogoneu.png}"></center>
+    <center> <img class="mischok-logo" th:src="@{images/mischoklogoneu.png}"></center>
     <h1 class="headline">Digitale Anwesenheitsliste</h1>
 
-    <center><i class="fas fa-user-alt" style='font-size:58px; color: white; margin-top:1rem; margin-bottom:1rem'></i></center>
+    <center><i class='fas fa-user-alt' style='font-size:58px; color: white'></i></center>
 
     <form>
         <center>
@@ -52,13 +51,18 @@
                 <label for="exampleInputPassword1" class="text-white">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
+            <div class="mb-3 form-check">
+
+            </div>
 
             <div class="d-grid gap-2 col-6 mx-auto">
-               <center><button class="btn btn-primary col-4" type="button">Login</button></center>
-                <center><button class="btn btn-warning col-4" type="button">Registrieren</button></center>
+               <center><button class="btn btn-primary col-3" type="button">Login</button></center>
+                <center><button class="btn btn-warning col-3" type="button">Registrieren</button></center>
             </div>
         </center>
     </form>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
