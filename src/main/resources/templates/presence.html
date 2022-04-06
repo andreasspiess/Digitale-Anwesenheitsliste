@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Dozenten Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+
+    body {
+    background-color: #002a5c;
+    }
+
+    .mischok-logo {
+    display: flex;
+
+    }
+
+    .d-grid {
+    margin-top: 3rem;
+    }
+
+    .btn {
+    height: 3rem;
+    width: 15rem;
+    }
+
+    .fs-1 {
+    color: white;
+    margin-top: 2rem;
+    }
+
+    .fas {
+    font-size: 58px;
+    color: white;
+    margin-top: 10rem;
+    }
+
+    .dropdown1 {
+    margin-top: 5rem;
+    margin-left: 1rem;
+    }
+
+    .dropdown2 {
+    float: left;
+    margin-top: 5rem;
+    padding-left: 5%;
+    }
+
+    .buttonLogout {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    padding-right: 5%;
+    }
+
+    .table {
+    margin-top: 2rem;
+    width: 90%;
+
+    }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <img class="mischok-logo" src="mischoklogoneu.png">
+
+    <center><h1 class="fs-1">Anwesenheitsliste</h1></center>
+
+    <!-- Large button groups (default and split) -->
+    <div class="btn-group dropdown1">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            @Monat
+        </button>
+        <ul class="dropdown-menu">
+            <li>Test1</li>
+        </ul>
+    </div>
+    <div class="btn-group dropdown2">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            @Umschüler
+        </button>
+        <ul class="dropdown-menu">
+            <li>Test2</li>
+        </ul>
+    </div>
+
+    <center>
+        <table class="table table-striped table-hover table-light">
+            <thead>
+                <tr>
+                    <td>
+                        Tag
+                    </td>
+                    <td>
+                        Anwesend
+                    </td>
+                    <td>
+                        Entschuldigt (optional)
+                    </td>
+                    <td>
+                        Uhrzeit von
+                    </td>
+                    <td>
+                        Uhrzeit bis
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        Ja
+                    </td>
+                    <td>
+                        -
+                    </td>
+                    <td>
+                        7:50 Uhr
+                    </td>
+                    <td>
+                        15:00 Uhr
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        Ja
+                    </td>
+                    <td>
+                        -
+                    </td>
+                    <td>
+                        7:55 Uhr
+                    </td>
+                    <td>
+                        15:00 Uhr
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+
+
+    <div class="d-grid gap-2 btn buttonLogout">
+        <button class="btn btn-success col-2 " type="button">Logout</button>
+    </div>
+</body>
+</html>

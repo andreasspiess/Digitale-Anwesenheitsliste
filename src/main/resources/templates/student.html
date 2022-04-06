@@ -2,25 +2,63 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Registrieren</title>
+    <title>StudentLogin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <style>
+
     body {
     background-color: #002a5c;
+    color: white;
     }
 
     .mischok-logo {
-    float: left;
-    width: 20%;
+    display: flex;
+
     }
+
+    .d-grid {
+    margin-top: 3rem;
+    }
+
+    .btn {
+    height: 60px;
+    }
+
+    .fs-1 {
+    margin-top: 10rem;
+    }
+
+    .fs-2 {
+    margin-top: 2rem;
+    }
+
+    .missingDays {
+    margin-top: 4rem;
+    }
+
+    .date1 {
+    margin-top: 2rem;
+    }
+
 
     </style>
 </head>
 <body>
 
-<img class="mischok-logo" th:src="@{images/mischoklogoneu.png}">
-<img class="mischok-logo" src="mischoklogoneu.png">
+    <img class="mischok-logo" src="mischoklogoneu.png">
+
+    <center><h1 class="fs-1">Hallo @Umschüler</h1></center>
+    <center><h1 class="fs-2">hiermit bestätige ich meine Anwesenheit am</h1></center>
+    <center><h1 class="date1">@Aktuelles Datum</h1></center>
+    <center><h1 class="date2">@Aktuelle Uhrzeit</h1></center>
+
+
+    <div class="d-grid gap-2 btn">
+        <center><button class="btn btn-success col-4" type="button">Anwesenheit bestätigen</button></center>
+    </div>
+
+    <center><h1 class="missingDays">Du hast diesen Monat <i style="color: red">5</i> Fehltage</h1></center>
 
 </body>
 </html>
