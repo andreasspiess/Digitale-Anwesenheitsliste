@@ -4,13 +4,15 @@ import org.springframework.security.core.authority.mapping.Attributes2GrantedAut
 
 import javax.persistence.*;
 
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-
+@Table(name = "person")
 public abstract class Person {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column
     private String firstName;

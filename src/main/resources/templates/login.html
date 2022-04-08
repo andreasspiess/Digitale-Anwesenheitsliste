@@ -9,7 +9,6 @@
 
     body {
     background-color: #002a5c;
-
     }
 
     .headline {
@@ -41,7 +40,7 @@
 
     <center><i class='fas fa-user-alt' style='font-size:58px; color: white; margin-top:1rem'></i></center>
 
-    <form>
+    <form class="formLogin" method="post" th:action="@{/login}">
         <center>
             <div class="mb-3 col-3">
                 <label for="exampleInputEmail1" class="text-white">Email address</label>
@@ -56,8 +55,8 @@
             </div>
 
             <div class="d-grid gap-2 col-6 mx-auto">
-               <center><button class="btn btn-primary col-3" type="button">Login</button></center>
-                <center><button class="btn btn-success col-3" type="button">Registrieren</button></center>
+               <center><button class="btn btn-primary col-3" name="submit" type="submit">Login</button></center>
+                <center><button class="btn btn-success col-3" name="submit" type="submit">Registrieren</button></center>
             </div>
         </center>
     </form>

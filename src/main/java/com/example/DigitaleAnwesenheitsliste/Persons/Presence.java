@@ -6,16 +6,21 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
-@Entity
 @Data
-@Table(name = "dozent")
-public class Dozent extends Person {
+@Entity
+@Table(name = "presence")
+public class Presence {
 
     @Id
     private Long id;
 
     @Column
-    private String person_id;
+    private LocalDateTime datum;
+
+    @Column
+    private String student_id;
+
 
 }
