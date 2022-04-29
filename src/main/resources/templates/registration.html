@@ -11,7 +11,9 @@
     }
 
     .headline {
+    margin-top: 5rem;
     color: white;
+    text-align: center;
     }
 
     .d-grid {
@@ -20,7 +22,13 @@
 
     .mb-3 {
     margin-top: 2rem;
-    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    }
+
+    .btn {
+    text-align: center;
+    margin: 0 auto;
     }
 
     </style>
@@ -29,36 +37,34 @@
 
     <img class="mischok-logo" src="mischoklogoneu.png">
 
-    <center><h1 class="headline">Registrieren</h1></center>
+    <h1 class="headline">Registrieren</h1>
 
 <form>
-    <center>
         <div class="mb-3 col-3">
             <label for="exampleInputEmail1" class="text-white">Vorname</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input th:field="*{first_name}" type="text" class="form-control" id="exampleInputEmail1">
         </div>
         <div class="mb-3 col-3">
             <label for="exampleInputPassword2" class="text-white">Nachname</label>
-            <input type="password" class="form-control" id="exampleInputPassword2">
+            <input th:field="*{last_name}" type="text" class="form-control" id="exampleInputPassword2">
         </div>
         <div class="mb-3 col-3">
             <label for="exampleInputPassword3" class="text-white">E-mail</label>
-            <input type="password" class="form-control" id="exampleInputPassword3">
+            <input th:field="*{email}" type="email" class="form-control" id="exampleInputPassword3" aria-describedby="emailHelp">
         </div>
         <div class="mb-3 col-3">
             <label for="exampleInputPassword4" class="text-white">Passwort</label>
-            <input type="password" class="form-control" id="exampleInputPassword4">
+            <input th:field="*{password}" type="password" class="form-control" id="exampleInputPassword4">
         </div>
         <div class="mb-3 col-3">
             <label for="exampleInputPassword5" class="text-white">Passwort wiederholen</label>
-            <input type="password" class="form-control" id="exampleInputPassword5">
+            <input th:field="*{matchingPassword}" type="password" class="form-control" id="exampleInputPassword5">
         </div>
 
         <div class="d-grid gap-2 col-6 mx-auto">
-            <center><button class="btn btn-primary col-4" type="button">Registrieren</button></center>
-            <center><button class="btn btn-success col-4" type="button">zum Login</button></center>
+            <button class="btn btn-primary col-4" type="button">Registrieren</button>
+            <button class="btn btn-success col-4" type="button">zum Login</button>
         </div>
-    </center>
 
 </form>
 </body>

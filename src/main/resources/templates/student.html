@@ -18,10 +18,13 @@
     }
 
     .d-grid {
+    text-align: center;
     margin-top: 3rem;
     }
 
     .btn {
+    text-align: center;
+    margin: 0 auto;
     height: 60px;
     }
 
@@ -34,6 +37,7 @@
     }
 
     .missingDays {
+    text-align: center;
     margin-top: 4rem;
     }
 
@@ -50,15 +54,16 @@
 
     <center><h1 class="fs-1">Hallo @Umschüler</h1></center>
     <center><h1 class="fs-2">hiermit bestätige ich meine Anwesenheit am</h1></center>
-    <center><h1 class="date1">@Aktuelles Datum</h1></center>
-    <center><h1 class="date2">@Aktuelle Uhrzeit</h1></center>
+    <center><h1 class="date1" th:text="${date}">Donnerstag, 28.04.2022</h1></center>
+    <center><h1 class="date2" th:text="${time}">08:55 Uhr</h1></center>
 
+    <form class="presenceToSafe" method="post" th:object="${presenceToSave}">
+        <div class="d-grid gap-2 btn">
+            <button class="btn btn-success col-4" type="submit">Anwesenheit bestätigen</button>
+        </div>
+    </form>
 
-    <div class="d-grid gap-2 btn">
-        <center><button class="btn btn-success col-4" type="button">Anwesenheit bestätigen</button></center>
-    </div>
-
-    <center><h1 class="missingDays">Du hast diesen Monat <i style="color: red">5</i> Fehltage</h1></center>
+        <h1 class="missingDays">Du hast diesen Monat <i style="color: red">5</i> Fehltage</h1>
 
 </body>
 </html>
