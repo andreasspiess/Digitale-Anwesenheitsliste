@@ -1,4 +1,4 @@
-package com.example.DigitaleAnwesenheitsliste.Persons;
+package com.example.DigitaleAnwesenheitsliste.Persons.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

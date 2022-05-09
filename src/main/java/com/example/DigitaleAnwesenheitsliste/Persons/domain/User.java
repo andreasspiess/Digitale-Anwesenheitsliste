@@ -21,6 +21,7 @@ public class User {
     private String last_name;
     private String email;
     private String password;
+    private String matchingPassword;
     private boolean enabled;
 
     @OneToMany(mappedBy = "user")
@@ -44,6 +45,18 @@ public class User {
         }
 
         return false;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
     public Long getId() {
