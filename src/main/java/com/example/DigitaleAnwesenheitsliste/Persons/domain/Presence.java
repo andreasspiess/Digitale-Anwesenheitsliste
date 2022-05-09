@@ -2,12 +2,15 @@ package com.example.DigitaleAnwesenheitsliste.Persons.domain;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "anwesenheit")
+@Table(name = "presence")
 public class Presence {
 
     @Id
@@ -21,8 +24,4 @@ public class Presence {
 
     @Column
     private String presentAbsent;
-
-    @ManyToOne
-    @JoinColumn(name ="user_id")
-    private User user;
 }

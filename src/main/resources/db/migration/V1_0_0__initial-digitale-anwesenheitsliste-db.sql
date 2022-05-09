@@ -25,8 +25,8 @@ CREATE TABLE `users_roles` (
 );
 
 CREATE TABLE `presence` (
-  `presence_id` int (11) NOT NULL,
-  `student_id` int(11) NOT NULL,
+  `presence_id` BIGSERIAL (11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `datum` varchar(50) NOT NULL),
   `presentAbsent` varchar(11) NOT NULL,
   PRIMARY KEY (`id`)
