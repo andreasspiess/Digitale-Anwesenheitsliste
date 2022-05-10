@@ -39,7 +39,7 @@
 
     <h1 class="headline">Registrieren</h1>
 
-<form>
+<form method="post" action="/registration" th:object="${userRegistration}">
         <div class="mb-3 col-3">
             <label for="exampleInputEmail1" class="text-white">Vorname</label>
             <input th:field="*{first_name}" type="text" class="form-control" id="exampleInputEmail1">
@@ -62,7 +62,7 @@
         </div>
 
         <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-primary col-4" type="button">Registrieren</button>
+            <button class="btn btn-primary col-4" type="submit">Registrieren</button>
             <button class="btn btn-success col-4" type="button">zum Login</button>
         </div>
 

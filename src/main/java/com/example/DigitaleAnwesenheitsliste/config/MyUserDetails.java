@@ -1,8 +1,7 @@
-package com.example.DigitaleAnwesenheitsliste.Persons.config;
+package com.example.DigitaleAnwesenheitsliste.config;
 import java.util.*;
 
-import com.example.DigitaleAnwesenheitsliste.Persons.domain.Role;
-import com.example.DigitaleAnwesenheitsliste.Persons.domain.User;
+import com.example.DigitaleAnwesenheitsliste.domain.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,18 +15,13 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        Set<Role> roles = user.getRoles();
-        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-
-        for (Role role : roles) {
-            authorities.add(new SimpleGrantedAuthority(role.getName()));
-        }
-        return authorities;
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(user.getRole().getName());
+        return Arrays.asList(authority);
     }
 
-    public boolean hasRole(String roleName) {
-        return this.user.hasRole(roleName);
-    }
+//    public boolean hasRole(String roleName) {
+//        return this.user.hasRole(roleName);
+//    }
 
     @Override
     public String getPassword() {

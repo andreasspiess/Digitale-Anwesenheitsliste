@@ -23,6 +23,7 @@
     }
 
     .btn {
+    display: block;
     text-align: center;
     margin: 0 auto;
     height: 60px;
@@ -45,6 +46,14 @@
     margin-top: 2rem;
     }
 
+    .lgt {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    height: 60px;
+    margin-top: 1rem;
+    }
+
 
     </style>
 </head>
@@ -61,6 +70,10 @@
         <div class="d-grid gap-2 btn">
             <button class="btn btn-success col-4" type="submit">Anwesenheit bestätigen</button>
         </div>
+    </form>
+
+    <form th:action="@{/logout}" method="post">
+        <button class="btn lgt btn-danger col-4" value="Logout" type="submit">Logout</button>
     </form>
 
         <h1 class="missingDays">Du hast diesen Monat <i style="color: red">5</i> Fehltage</h1>

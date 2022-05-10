@@ -1,36 +1,26 @@
-CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(45) NOT NULL,
-  `first_name` varchar(45) NOT NULL,
-  `last_name` varchar(45) NOT NULL,
-  `password` varchar(64) NOT NULL,
-  `enabled` tinyint(4) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
+CREATE TABLE IF NOT EXISTS USER (
+  ID BIGSERIAL PRIMARY KEY,
+  EMAIL VARCHAR(45) NOT NULL UNIQUE,
+  FIRST_NAME VARCHAR(45) NOT NULL,
+  LAST_NAME VARCHAR(45) NOT NULL,
+  PASSWORD VARCHAR(64) NOT NULL,
+  ENABLED BOOLEAN NOT NULL,
+  ROLE_ID BIGINT NOT NULL
 );
 
-CREATE TABLE `roles` (
-  `role_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE IF NOT EXISTS ROLE (
+  ID BIGSERIAL PRIMARY KEY,
+  NAME VARCHAR(45) NOT NULL
 );
 
-CREATE TABLE `users_roles` (
-  `user_id` int(11) NOT NULL,
-  `role_id` int(11) NOT NULL,
-  KEY `user_fk_idx` (`user_id`),
-  KEY `role_fk_idx` (`role_id`),
-  CONSTRAINT `role_fk` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`),
-  CONSTRAINT `user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
+CREATE TABLE IF NOT EXISTS PRESENCE (
+  ID BIGSERIAL PRIMARY KEY,
+  USER_ID BIGINT NOT NULL,
+  DATE TIMESTAMP NOT NULL,
+  CONSTRAINT FK_PRESENCE_USER FOREIGN KEY (USER_ID) REFERENCES USER(ID)
 );
 
-CREATE TABLE `presence` (
-  `presence_id` BIGSERIAL (11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `datum` varchar(50) NOT NULL),
-  `presentAbsent` varchar(11) NOT NULL,
-  PRIMARY KEY (`id`)
-);
+INSERT INTO ROLE (ID, NAME) VALUES (1, 'DOZENT');
+INSERT INTO ROLE (ID, NAME) VALUES (2, 'STUDENT');
 
-INSERT INTO `roles` (`name`) VALUES ('USER');
-INSERT INTO `roles` (`name`) VALUES ('DOZENT');
+INSERT INTO USER (EMAIL, FIRST_NAME, LAST_NAME, PASSWORD, ENABLED, ROLE_ID) VALUES ('spiess.andi@web.de', 'Andreas', 'Spieß', '$2a$10$FE5bHSpWg8H53A0O1aQ1/OyN87vv96XA5dqKfA4cAw9EmbKGwLRB2','true', 1)

@@ -1,6 +1,6 @@
-package com.example.DigitaleAnwesenheitsliste.Persons;
+package com.example.DigitaleAnwesenheitsliste.controller;
 
-import com.example.DigitaleAnwesenheitsliste.Persons.domain.Presence;
+import com.example.DigitaleAnwesenheitsliste.domain.Presence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,6 @@ public class LoginController {
 
     @Autowired
     PasswordEncoder passwordEncoder;
-
 
     @GetMapping("/student")
     public String getStartpage(Model model) {
@@ -46,7 +45,6 @@ public class LoginController {
 
     @GetMapping("/login")
     public String getLogin(Model model) {
-        System.out.println(passwordEncoder.encode("pass"));
         return "login";
     }
 }
