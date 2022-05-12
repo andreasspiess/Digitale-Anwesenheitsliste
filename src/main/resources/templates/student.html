@@ -30,10 +30,12 @@
     }
 
     .fs-1 {
+    text-align: center;
     margin-top: 10rem;
     }
 
     .fs-2 {
+    text-align: center;
     margin-top: 2rem;
     }
 
@@ -43,14 +45,15 @@
     }
 
     .date1 {
+    text-align: center;
     margin-top: 2rem;
     }
 
-    .lgt {
-    display: block;
+    .date2 {
     text-align: center;
-    margin: 0 auto;
-    height: 60px;
+    }
+
+    .logout {
     margin-top: 1rem;
     }
 
@@ -59,21 +62,22 @@
 </head>
 <body>
 
-    <img class="mischok-logo" src="mischoklogoneu.png">
+    <img class="mischok-logo" th:src="@{images/mischoklogoneu.png}">
 
-    <center><h1 class="fs-1">Hallo @Umschüler</h1></center>
-    <center><h1 class="fs-2">hiermit bestätige ich meine Anwesenheit am</h1></center>
-    <center><h1 class="date1" th:text="${date}">Donnerstag, 28.04.2022</h1></center>
-    <center><h1 class="date2" th:text="${time}">08:55 Uhr</h1></center>
+    <h1 class="fs-1" th:text="${'Hallo ' + fullName}"></h1>
+    <h1 class="fs-2">hiermit bestätige ich meine Anwesenheit am</h1>
+    <h1 class="date1" th:text="${date}"></h1>
+    <h1 class="date2" th:text="${time}"></h1>
 
     <form class="presenceToSafe" method="post" th:object="${presenceToSave}">
         <div class="d-grid gap-2 btn">
-            <button class="btn btn-success col-4" type="submit">Anwesenheit bestätigen</button>
+            <button class="btn btn-success col-4" onclick="window.location.href = 'https://localhost:8080/registration-confirmation'" type="submit">Anwesenheit bestätigen</button>
+            <input type="hidden" th:value="${id}" th:field="*{id}">
         </div>
     </form>
 
     <form th:action="@{/logout}" method="post">
-        <button class="btn lgt btn-danger col-4" value="Logout" type="submit">Logout</button>
+        <button class="logout btn btn-danger col-4" value="Logout" type="submit">Logout</button>
     </form>
 
         <h1 class="missingDays">Du hast diesen Monat <i style="color: red">5</i> Fehltage</h1>

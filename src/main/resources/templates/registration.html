@@ -6,6 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <style>
+
     body {
     background-color: #002a5c;
     }
@@ -31,11 +32,13 @@
     margin: 0 auto;
     }
 
+
+
     </style>
 </head>
 <body>
 
-    <img class="mischok-logo" src="mischoklogoneu.png">
+        <img class="mischok-logo" th:src="@{images/mischoklogoneu.png}">
 
     <h1 class="headline">Registrieren</h1>
 
@@ -63,7 +66,7 @@
 
         <div class="d-grid gap-2 col-6 mx-auto">
             <button class="btn btn-primary col-4" type="submit">Registrieren</button>
-            <button class="btn btn-success col-4" type="button">zum Login</button>
+            <button class="btn btn-success col-4" onclick="location.href='http://localhost:8080/login'" type="button">zum Login</button>
         </div>
 
 </form>
