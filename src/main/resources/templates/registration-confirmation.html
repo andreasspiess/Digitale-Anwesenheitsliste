@@ -32,7 +32,9 @@
 
     <h1 class="headline">Deine Registrierung war erfolgreich!</h1>
 
-    <button type="button" class="button btn btn-success col-3">zum Login</button>
+    <form class="formLogin" method="post" th:action="@{/login}">
+        <button type="submit" class="button btn btn-success col-3">zum Login</button>
+    </form>
 
 </body>
 </html>

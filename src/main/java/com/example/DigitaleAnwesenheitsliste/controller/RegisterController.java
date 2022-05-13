@@ -24,14 +24,14 @@ public class RegisterController {
     @Autowired
     PasswordEncoder passwordEncoder;
 
-    @GetMapping(path = "registration")
+    @GetMapping("/registration")
     public String showRegistrationForm(Model model) {
         model.addAttribute("userRegistration", new UserBean());
 
         return "registration";
     }
 
-    @PostMapping(path = "registration")
+    @PostMapping("/registration")
     public String saveUser (Model model, UserBean userBean) {
         System.out.println(userBean.getPassword());
         model.addAttribute("userRegistration",  userBean);
@@ -47,7 +47,19 @@ public class RegisterController {
         System.out.println(passwordEncoder);
         userRepository.save(user);
 
-        return "registration";
+        return "registration-confirmation";
 
+    }
+
+//    @GetMapping("/registration-confirmation")
+//    public String getPage() {
+//
+//        return "registration-confirmation";
+//    }
+
+    @PostMapping("/registration-confirmation")
+    public String backToLogin() {
+
+        return "/login";
     }
 }
