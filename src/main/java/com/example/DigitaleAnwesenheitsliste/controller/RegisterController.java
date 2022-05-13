@@ -44,6 +44,7 @@ public class RegisterController {
         user.setRole(roleStudent);
         user.setEnabled(true);
         System.out.println(user);
+        System.out.println(passwordEncoder);
         userRepository.save(user);
 
         return "registration";

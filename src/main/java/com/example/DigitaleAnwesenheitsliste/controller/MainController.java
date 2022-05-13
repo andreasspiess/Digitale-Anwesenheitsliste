@@ -32,12 +32,10 @@ public class MainController {
     @GetMapping("/student")
     public String getStartpage(Model model, Principal principal) {
         System.out.println(principal.getName());
-        System.out.println(principal.getName());
 
         Optional<User> loggedUser = userRepository.findByEmailIs(principal.getName());
         model.addAttribute("fullName", loggedUser.get().getFirst_name() + " " + loggedUser.get().getLast_name());
         model.addAttribute("id", loggedUser.get().getId());
-
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("EEEE, dd.MM.uuuu");
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss");
@@ -63,12 +61,11 @@ public class MainController {
 
         presence.setUser(loggedUser.get());
         presence.setDate(LocalDateTime.now());
-
         presenceRepository.save(presence);
 
         model.addAttribute("presenceToSave", presence);
 
-        return "student";
+        return "student-confirmation";
     }
 
     @GetMapping("/dozent")
@@ -80,5 +77,17 @@ public class MainController {
     @GetMapping("/login")
     public String getLogin(Model model) {
         return "login";
+    }
+
+    @GetMapping("/student-confirmation")
+    public String getStudentConfirmation()  {
+
+        return "student-confirmation";
+    }
+
+    @PostMapping("/student-confirmation")
+    public String showLoginPage() {
+
+        return "/login";
     }
 }

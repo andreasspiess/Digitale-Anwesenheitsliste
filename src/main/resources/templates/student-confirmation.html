@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Anwesenheit erfolgreich bestätigt</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <style>
     body {
@@ -23,15 +24,18 @@
     height: 60px;
     }
 
+
     </style>
 </head>
 <body>
 
-<img class="mischok-logo" src="mischoklogoneu.png">
+<img class="mischok-logo" th:src="@{images/mischoklogoneu.png}">
 
 <h1 class="headline">Deine Anwesenheit wurde erfolgreich bestätigt!</h1>
 
-<button type="button" class="btn btn-success col-3">zum Login</button>
+    <form class="formLogin" method="post" th:action="@{/login}">
+        <button type="submit" class="btn btn-success col-3">zum Login</button>
+    </form>
 
 </body>
 </html>
