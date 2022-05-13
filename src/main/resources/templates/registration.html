@@ -49,19 +49,19 @@
         </div>
         <div class="mb-3 col-3">
             <label for="exampleInputPassword2" class="text-white">Nachname</label>
-            <input th:field="*{last_name}" type="text" class="form-control" id="exampleInputPassword2">
+            <input th:field="*{last_name}" type="text" class="form-control" id="exampleInputPassword2" required>
         </div>
         <div class="mb-3 col-3">
             <label for="exampleInputPassword3" class="text-white">E-mail</label>
-            <input th:field="*{email}" type="email" class="form-control" id="exampleInputPassword3" aria-describedby="emailHelp">
+            <input th:field="*{email}" type="email" class="form-control" id="exampleInputPassword3" aria-describedby="emailHelp" required>
         </div>
         <div class="mb-3 col-3">
             <label for="exampleInputPassword4" class="text-white">Passwort</label>
-            <input th:field="*{password}" type="password" class="form-control" id="exampleInputPassword4">
+            <input th:field="*{password}" type="password" class="form-control" id="exampleInputPassword4" required>
         </div>
         <div class="mb-3 col-3">
             <label for="exampleInputPassword5" class="text-white">Passwort wiederholen</label>
-            <input th:field="*{matchingPassword}" type="password" class="form-control" id="exampleInputPassword5">
+            <input th:field="*{matchingPassword}" type="password" class="form-control" id="exampleInputPassword5" required>
         </div>
 
         <div class="d-grid gap-2 col-6 mx-auto">
