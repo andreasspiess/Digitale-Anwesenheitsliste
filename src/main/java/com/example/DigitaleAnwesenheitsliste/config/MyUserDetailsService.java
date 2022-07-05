@@ -30,8 +30,8 @@ public class MyUserDetailsService implements UserDetailsService {
         Optional<User> user = userRepository.findByEmailIs((email));
         log.debug("user optional from database: {}", user.get().getEmail());
         log.debug("test: {}", passwordEncoder.encode("test"));
-        log.debug("does pw match? {}, {}, {}", "test", "$2a$10$FhE/k3zvzWmHCe1wwGTRb.Ff4Uh72h1YLoNh1HGMbp0jPWszVTWGu",
-                passwordEncoder.matches("test", "$2a$10$FhE/k3zvzWmHCe1wwGTRb.Ff4Uh72h1YLoNh1HGMbp0jPWszVTWGu" ));
+        log.debug("does pw match? {}, {}, {}", "test", "$2a$10$FE5bHSpWg8H53A0O1aQ1/OyN87vv96XA5dqKfA4cAw9EmbKGwLRB2",
+                passwordEncoder.matches("test", "$2a$10$FE5bHSpWg8H53A0O1aQ1/OyN87vv96XA5dqKfA4cAw9EmbKGwLRB2"));
 
         if (user.isPresent()) {
             return org.springframework.security.core.userdetails.User.withUsername(user.get().getEmail())
